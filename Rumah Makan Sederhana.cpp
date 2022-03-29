@@ -113,4 +113,63 @@ int main (){
 
     else if ((harga > 150000)){
 
-       cout << "\nAnda mendapatkan potongan diskon sebesar 35% dan ongkir sebesar Rp8.000";
+      cout << "\nAnda mendapatkan potongan diskon sebesar 35% dan ongkir sebesar Rp8.000";
+      diskon = harga * 0.35;
+      total = harga - diskon + 7000;
+      hsl.open("struct.txt", ios::app);
+      hsl << "\nAnda mendapatkan potongan diskon sebesar 35% dan ongkir sebesar Rp8.000";
+      hsl.close();
+    }
+  }
+
+  else if (jarak > 3){
+
+    if (harga <= 25000){
+
+    total = harga + 25000;
+    
+  }
+
+     if ((harga > 25000) && (harga <= 50000)){
+
+      cout << "\nAnda mendapatkan potongan ongkir sebesar Rp3.000";
+      total = harga + 22000;
+      hsl.open("struct.txt", ios::app);
+      hsl << "\nAnda mendapatkan potongan ongkir sebesar Rp3.000";
+      hsl.close();
+    }
+    else if ((harga > 50000) && (harga <= 150000)){
+
+      cout << "\nAnda mendapatkan potongan diskon sebesar 15% dan ongkir sebesar Rp5.000";
+      diskon = harga * 0.15;
+      total = harga - diskon + 20000;
+      hsl.open("struct.txt", ios::app);
+      hsl << "\nAnda mendapatkan potongan diskon sebesar 15% dan ongkir sebesar Rp5.000";
+      hsl.close();
+  
+  }
+
+    else if ((harga > 150000)){
+
+      cout << "\nAnda mendapatkan potongan diskon sebesar 35% dan ongkir sebesar Rp8.000";
+      diskon = harga * 0.35;
+      total = harga - diskon + 17000;
+      hsl.open("struct.txt", ios::app);
+      hsl << "\nAnda mendapatkan potongan diskon sebesar 35% dan ongkir sebesar Rp8.000";
+      hsl.close();
+      
+    }
+  }
+  cout <<"\nTotal Harga : " << total;
+  cout << "\nMasukkan Uang Anda : ";
+  cin >> bayar;
+  cout << "Kembalian : " << bayar - total;
+  
+  hsl.open("struct.txt", ios::app);
+  hsl << "\n================================\n";
+  hsl << "\nTotal Harga : " << total;
+  hsl << "\nUang anda : " << bayar;
+  hsl << " Kembalian : " << bayar - total;
+  hsl.close();
+  
+  }
