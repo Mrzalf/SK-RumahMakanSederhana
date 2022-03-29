@@ -56,3 +56,61 @@ int main (){
   }
   else if(pilih1==3){
     cout << "3. Udang Goreng : Rp19.000" << endl;
+    harga=harga+19000;
+    hsl.open("struct.txt", ios::app);
+    hsl << "3. Udang Goreng : Rp19.000"<<endl;
+    hsl.close(); 
+  }
+  else if(pilih1==4){
+    cout << "4. Cumi Goreng : Rp20.000" << endl;
+    harga=harga+20000;
+    hsl.open("struct.txt", ios::app);
+    hsl << "4. Cumi Goreng : Rp20.000"<<endl;
+    hsl.close(); 
+  }
+  else if(pilih1==5){
+    cout << "5. Ayam Bakar : Rp25.000" << endl;
+    harga=harga+25000;
+    hsl.open("struct.txt", ios::app);
+    hsl << "5. Ayam Bakar : Rp25.000"<<endl;
+    hsl.close(); 
+  }
+  
+    }
+
+  cout << "Masukkan Jarak dari Restoran ke Rumah Anda (dalam KM) : ";
+  cin >> jarak;
+  cout << "Jarak dari Restoran ke Rumah Anda adalah " << jarak << " Kilometer.";
+  hsl.open("struct.txt", ios::app);
+  hsl << "================================\n";
+  hsl << "Jarak dari Restoran ke Rumah Anda adalah " << jarak << " Kilometer."<<endl;
+  hsl.close();
+  if (jarak <= 3){
+
+  if (harga <= 25000){
+
+    total = harga + 15000;
+    
+  }
+    else  if (harga > 25000){
+
+      cout << "\nAnda mendapatkan potongan ongkir sebesar Rp3.000";
+      total = harga + 12000;
+      hsl.open("struct.txt", ios::app);
+      hsl << "\nAnda mendapatkan potongan ongkir sebesar Rp3.000";
+      hsl.close();
+    }
+    else if (harga > 50000){
+
+      cout << "\nAnda mendapatkan potongan diskon sebesar 15% dan ongkir sebesar Rp5.000";
+      diskon = harga * 0.15;
+      total = harga - diskon + 10000;
+      hsl.open("struct.txt", ios::app);
+      hsl << "\nAnda mendapatkan potongan diskon sebesar 15% dan ongkir sebesar Rp5.000";
+      hsl.close();
+        
+    }
+
+    else if ((harga > 150000)){
+
+       cout << "\nAnda mendapatkan potongan diskon sebesar 35% dan ongkir sebesar Rp8.000";
